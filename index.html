@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="src/styles.css" />
+        <script
+            src="https://kit.fontawesome.com/7019a64640.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="cities">
+                    <div class="logo">
+                        <i class="fas fa-temperature-low"></i>
+                        <span>Weather App</span>
+                    </div>
+                    <button class="button button-block">city 1</button>
+                    <button class="button button-block">city 2</button>
+                    <button class="button button-block">city 3</button>
+                    <button class="button button-block">city 4</button>
+                </div>
+                <div class="content">
+                    <div class="row">
+                        <form id="form-search">
+                            <div class="searchBox">                            
+                                <input
+                                    type="search"
+                                    name="Search"
+                                    id="search-input"
+                                    placeholder="Search a city .."                                        
+                                />
+                                
+                                <input 
+                                    type="submit" 
+                                    value="Search"
+                                    class="buttonS button-inline color-blue">
+                                    
+                                </input>
+                                <button id="current" class="buttonS button-inline color-green">
+                                    Current
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="currentWeather">
+                                <h1 id="city-name">London</h1>
+                                <p class="date" id="date">4 Jul 2021</p>
+                                <p id="main">Clouds</p>
+                            </div>
+                        </div>
+                        <div class="col-5 detailWeather">
+                            <i class="fas fa-cloud-sun mb-2"></i>
+                            <h1 id="degree">24</h1>
+                            <a href="#" class="celsiu" id="celsiu">°c</a>
+                            <span>|</span>
+                            <a href="#" class="fahrenheit" id="fahrenheit">°f</a>
+                            <p>humidity: <span id="humidity">35</span>%</p>
+                            <p>Wind: <span id="speed">4</span>km/h</p>
+                        </div>
+                    </div>
+                    <div class="row days">
+                        <div class="col-2 day">
+                            <p>Mon</p>
+                            <i class="fas fa-cloud-sun-rain"></i>
+                        </div>
+                        <div class="col-2 day">
+                            <p>Tue</p>
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="col-2 day">
+                            <p>Wed</p>
+                            <i class="fas fa-cloud-sun-rain"></i>
+                        </div>
+                        <div class="col-2 day">
+                            <p>Thu</p>
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="col-2 day">
+                            <p>Fri</p>
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="src/index.js"></script>
+    </body>
+</html>
