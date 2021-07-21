@@ -1,4 +1,28 @@
-let apiKey = "469611e51569c75f911c80b0cea9dfa5";
+// Get Time
+
+let now = new Date();
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
+let month = months[now.getMonth()];
+let day = now.getDate();
+let date = document.querySelector("#date");
+date.innerHTML = `${day} ${month} ${now.getFullYear()}`;
+
+// ********************************************* //
+
+
 //Show tempature with city
 
 function displayWeather(response) {
@@ -43,31 +67,6 @@ function search(event) {
 
 
 
-// ********************************************* //
-// Get Time
-
-let now = new Date();
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
-let month = months[now.getMonth()];
-let day = now.getDate();
-let date = document.querySelector("#date");
-date.innerHTML = `${day} ${month} ${now.getFullYear()}`;
-
-// ********************************************* //
-
 //Change celsius to fahrenheit
 function convertCi(event) {
   let temp = document.querySelector("#degree");
@@ -90,6 +89,7 @@ F.addEventListener("click", convertFah);
 // ********************************************* //
 // event for button
 
+let apiKey = "469611e51569c75f911c80b0cea9dfa5";
 
 let formSearch = document.querySelector("#form-search");
 formSearch.addEventListener("submit", search);

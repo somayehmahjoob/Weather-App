@@ -47,7 +47,12 @@ input:hover {
   color: #79d1c3;
 }
 .container {
-  background-color: #f2f3f7;
+  /* background: #f2f3f7; */
+  background: radial-gradient(
+    circle at 49.7% 137.8%,
+    rgb(250, 250, 250) 44%,
+    rgb(242, 243, 247) 55%
+  );
   max-width: 600px;
   border-radius: 30px;
   box-shadow: -2px -2px 4px 0px #ffffff, 20px 20px 50px 0px rgb(0 0 0 / 25%);
@@ -141,11 +146,13 @@ input:hover {
 .detailWeather {
   margin-top: 10px;
 }
-.detailWeather i {
+.detailWeather img {
   display: block;
-  text-align: center;
-  font-size: 60px;
-  color: #3c4245;
+  margin: 1px auto 8px 5px;
+  background: rgba(101, 172, 251, 0.2);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
 }
 .detailWeather h1 {
   display: inline-block;
@@ -188,8 +195,9 @@ input:hover {
   margin: 3px 0px;
   font-size: 20px;
 }
-.day i {
+.day img {
   display: block;
-  font-size: 22px;
-  margin: 0 5px;
+  margin: 0px -10px;
+  width: 50px;
+  height: 50px;
 }
