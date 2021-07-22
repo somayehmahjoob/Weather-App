@@ -96,14 +96,17 @@ let apiKey = "469611e51569c75f911c80b0cea9dfa5";
 let btnYourCity = document.querySelector("#yourCity");
 btnYourCity.addEventListener("click",handlePosition);
 
-let btnAhvaz = document.querySelector("#ahvaz");
-btnAhvaz.addEventListener("click",searchWithCityName("Ahvaz"));
+// let btnAhvaz = document.querySelector("#ahvaz");
+// console.log("ahvaz");
+// btnAhvaz.addEventListener("click",searchWithCityName("Ahvaz"));
 
-let btnTehran = document.querySelector("#tehran");
-btnTehran.addEventListener("click",searchWithCityName("Tehran"));
+// let btnTehran = document.querySelector("#tehran");
+// console.log("tehran");
+// btnTehran.addEventListener("click",searchWithCityName("Tehran"));
 
-let btnShiraz = document.querySelector("#shiraz");
-btnShiraz.addEventListener("click",searchWithCityName("Shiraz"));
+// let btnShiraz = document.querySelector("#shiraz");
+// console.log("shiraz");
+// btnShiraz.addEventListener("click",searchWithCityName("Shiraz"));
 
 
 let formSearch = document.querySelector("#form-search");
