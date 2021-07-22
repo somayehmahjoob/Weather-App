@@ -167,15 +167,22 @@ input:hover {
   font-weight: 500;
 }
 .detailWeather a {
+  color: #65acfb;
   text-decoration: none;
-  color: #3c4245;
 }
 .detailWeather .fahrenheit {
   left: -3px;
 }
 .detailWeather a:hover {
   cursor: pointer;
-  color: #65acfb;
+}
+.detailWeather .active{
+  color: #3c4245;
+
+}
+.detailWeather .active:hover {
+  color: #3c4245;
+  cursor: default;
 }
 #humidity,
 #speed {
