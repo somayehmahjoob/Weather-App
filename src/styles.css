@@ -31,9 +31,9 @@ form {
   width: 100%;
 }
 input {
-  margin-right: 8px;
+  margin-right: 3px;
   box-shadow: inset 2px 2px 5px #cacaca, inset -5px -5px 10px #fff;
-  /* width: 100%; */
+  width: 75%;
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
 }
@@ -84,7 +84,7 @@ input:hover {
 }
 .button-inline {
   display: inline-block;
-  width: 20%;
+  width: 22%;
   padding: 14px 5px;
 }
 .cities {
@@ -149,10 +149,11 @@ input:hover {
 .detailWeather img {
   display: block;
   margin: 1px auto 8px 5px;
-  background: rgba(101, 172, 251, 0.2);
-  border-radius: 50%;
+  background: #fcfcfc;;
+  border-radius: 15%;
   width: 90px;
-  height: 90px;
+  height: 90px;  
+
 }
 .detailWeather h1 {
   display: inline-block;
