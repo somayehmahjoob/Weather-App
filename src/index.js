@@ -23,7 +23,6 @@ function getDay(dt){
   let now = new Date(dt * 1000);
   let days = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
   let day = days[now.getDay()];
-  console.log(day);
   return day;
 }
 
@@ -66,7 +65,6 @@ function getForecast(coordians){
 //Show tempature with city
 
 function displayWeather(response) {
-  console.log(response.data);
   //get
   let cityNameElement = response.data.list[0].name;
   let tempElement = response.data.list[0].main.temp;
