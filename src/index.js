@@ -28,7 +28,6 @@ function getDay(dt){
 
 function displayWeatherForecast(response){
   let forecastElement = document.querySelector("#forecast");
-  //console.log(response.data.daily);
   let forecastDays = response.data.daily;
   
   let forecastHTML = `<div class="row forecast-weather-daily">`;
@@ -43,8 +42,6 @@ function displayWeatherForecast(response){
           <span class="forecast-temp-max">${Math.round(forecastDay.temp.max)}°c</span><span class="forecast-temp-min">${Math.round(forecastDay.temp.min)}°c</span>
         </div>
       </div>`;      
-    //  console.log(forecastDay.weather[0].description); 
-    //  console.log(`http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png `);
     }
   });
 
@@ -139,7 +136,6 @@ fahrenheitElement.addEventListener("click", function(event){
   searchWithCityName(cityNameForChangeUnit);
   fahrenheitElement.classList.add("active");
   celsiusElement.classList.remove("active");
-
 });
 
 let cityNameForChangeUnit =null;
