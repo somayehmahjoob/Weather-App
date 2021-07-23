@@ -40,6 +40,7 @@ input {
 input:hover {
   outline: none;
 }
+
 .color-blue {
   color: #077dfe;
 }
@@ -218,4 +219,10 @@ input:hover {
 .forecast-temp .forecast-temp-min{
   margin-left: 5px;
 }
-
+.footer{
+  text-align: center;
+  margin: 5px auto;
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 18px;
+}
