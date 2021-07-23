@@ -58,7 +58,7 @@ function getForecast(coordians){
   let apiKey = "469611e51569c75f911c80b0cea9dfa5";  
   let lat = coordians.lat;
   let lon = coordians.lon;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayWeatherForecast);
 }
 
@@ -74,6 +74,7 @@ function displayWeather(response) {
   let iconElement = response.data.list[0].weather[0].icon;
   //set
   currentTempWithCelsius = tempElement;
+  cityNameForChangeUnit = cityNameElement;
   document.querySelector("#city-name").innerHTML = cityNameElement;
   document.querySelector("#degree").innerHTML = Math.round(currentTempWithCelsius);
   document.querySelector("#main").innerHTML = mainElement;
@@ -88,10 +89,11 @@ function displayWeather(response) {
 
 
 function displayPosition(location) {
+ 
   let apiKey = "469611e51569c75f911c80b0cea9dfa5";
   let lat = location.coords.latitude;
   let lon = location.coords.longitude;
-  let url = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&&appid=${apiKey}&units=metric`;
+  let url = `https://api.openweathermap.org/data/2.5/find?lat=${lat}&lon=${lon}&&appid=${apiKey}&units=${unit}`;
   axios.get(url).then(displayWeather);
 }
 function handlePosition(){
@@ -100,7 +102,7 @@ function handlePosition(){
 
 function searchWithCityName(city) {
   let apiKey = "469611e51569c75f911c80b0cea9dfa5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/find?q=${city}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/find?q=${city}&units=${unit}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -110,57 +112,38 @@ function search(event) {
   searchWithCityName(cityNameSearched);
 }
 
-//Change celsius to fahrenheit
-function convertCi(event) {
-  event.preventDefault();  
-  let tempElement = document.querySelector("#degree");
-  celsiusElement.classList.add("active");
-  fahrenheitElement.classList.remove("active");
-  let temp = Math.round(currentTempWithCelsius);
-  tempElement.innerHTML = temp;
-}
-
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  fahrenheitElement.classList.add("active");
-  celsiusElement.classList.remove("active");
-  let cToF = Math.round((currentTempWithCelsius * 9) / 5 + 32);
-  let tempElement = document.querySelector("#degree");
-  tempElement.innerHTML = cToF;
-}
-
-
 // event for button
-let celsiusElement = document.querySelector("#celsius");
-celsiusElement.addEventListener("click", convertCi);
-
-let fahrenheitElement = document.querySelector("#fahrenheit");
-fahrenheitElement.addEventListener("click", convertToFahrenheit);
-
 
 
 let btnYourCity = document.querySelector("#yourCity");
 btnYourCity.addEventListener("click",handlePosition);
 
-// let btnAhvaz = document.querySelector("#ahvaz");
-// console.log("ahvaz");
-// btnAhvaz.addEventListener("click",searchWithCityName("Ahvaz"));
-
-// let btnTehran = document.querySelector("#tehran");
-// console.log("tehran");
-// btnTehran.addEventListener("click",searchWithCityName("Tehran"));
-
-// let btnShiraz = document.querySelector("#shiraz");
-// console.log("shiraz");
-// btnShiraz.addEventListener("click",searchWithCityName("Shiraz"));
-
-
 let formSearch = document.querySelector("#form-search");
 formSearch.addEventListener("submit", search);
 
 
+let celsiusElement = document.querySelector("#celsius");
+celsiusElement.addEventListener("click", function(event){
+  event.preventDefault();
+  unit="metric";  
+  searchWithCityName(cityNameForChangeUnit);
+  celsiusElement.classList.add("active");
+  fahrenheitElement.classList.remove("active");
+
+});
+
+let fahrenheitElement = document.querySelector("#fahrenheit");
+fahrenheitElement.addEventListener("click", function(event){
+  event.preventDefault();
+  unit = "imperial";
+  searchWithCityName(cityNameForChangeUnit);
+  fahrenheitElement.classList.add("active");
+  celsiusElement.classList.remove("active");
+
+});
+
+let cityNameForChangeUnit =null;
 let currentTempWithCelsius = null;
-
-
+let unit = "metric";
 searchWithCityName("paris");
+
